@@ -1,0 +1,524 @@
+/* Стили для страницы со списком книг */
+.books-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: calc(100vh - 160px);
+}
+
+.books-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.books-header h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.books-header p {
+    color: #666;
+}
+
+/* Стили для поиска */
+.search-section {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search-box input,
+.search-box select {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus,
+.search-box select:focus {
+    outline: none;
+    border-color: #00ff9d;
+    box-shadow: 0 0 0 2px rgba(0, 255, 157, 0.1);
+}
+
+/* Filters styles */
+.filters {
+    display: flex !important;
+    gap: 20px !important;
+    margin-bottom: 30px !important;
+    padding: 0 20px !important;
+}
+
+.filters form {
+    display: flex !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+.filter-form {
+    width: 100% !important;
+}
+
+.filter-inputs {
+    display: flex !important;
+    gap: 20px !important;
+    align-items: center !important;
+    padding: 20px !important;
+    background: #fff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.search-box, .category-filter {
+    position: relative !important;
+    flex: 1 !important;
+}
+
+.search-box input, .category-filter select {
+    width: 100% !important;
+    padding: 12px 20px 12px 40px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    font-size: 1em !important;
+    transition: all 0.3s ease !important;
+}
+
+.search-box input:focus, .category-filter select:focus {
+    outline: none !important;
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1) !important;
+}
+
+.search-icon, .filter-icon {
+    position: absolute !important;
+    left: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #666 !important;
+}
+
+.category-filter select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-color: white !important;
+    cursor: pointer !important;
+}
+
+.category-filter::after {
+    content: '\f107' !important;
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900 !important;
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #666 !important;
+    pointer-events: none !important;
+}
+
+.filter-submit {
+    flex-shrink: 0 !important;
+}
+
+.btn-submit {
+    background: #007bff !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    font-size: 1em !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-submit:hover {
+    background: #0056b3 !important;
+}
+
+@media (max-width: 768px) {
+    .filter-inputs {
+        flex-direction: column !important;
+    }
+    
+    .search-box, .category-filter, .filter-submit {
+        width: 100% !important;
+    }
+    
+    .btn-submit {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters form {
+        flex-direction: column !important;
+    }
+    
+    .search-box, .category-filter {
+        width: 100% !important;
+    }
+}
+
+/* Reset default styles */
+.books-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+    gap: 30px !important;
+    padding: 20px 0 !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+/* Book card styles */
+.book-card {
+    background: white !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+}
+
+.book-cover {
+    position: relative !important;
+    width: 100% !important;
+    height: 400px !important;
+    background: #f8f9fa !important;
+    overflow: hidden !important;
+}
+
+.book-cover img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease !important;
+}
+
+.book-info {
+    padding: 15px !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.book-info h3 {
+    margin: 0 0 10px 0 !important;
+    font-size: 1.1em !important;
+    color: #333 !important;
+    line-height: 1.4 !important;
+}
+
+.book-details {
+    margin-bottom: 15px !important;
+}
+
+.book-details p {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 0 5px 0 !important;
+    color: #666 !important;
+    font-size: 0.9em !important;
+}
+
+.book-details i {
+    margin-right: 8px !important;
+    color: #007bff !important;
+    width: 16px !important;
+    text-align: center !important;
+}
+
+.btn-details {
+    display: inline-block !important;
+    width: 100% !important;
+    padding: 8px !important;
+    background: #007bff !important;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    font-size: 0.9em !important;
+    font-weight: 500 !important;
+    margin-top: auto !important;
+    transition: all 0.3s ease !important;
+}
+
+.book-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.btn-favorite:hover {
+    background: #f8f9fa;
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-favorite.active {
+    background: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+.btn-favorite.active:hover {
+    background: #c82333;
+    border-color: #c82333;
+}
+
+/* Hover effects */
+.book-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+}
+
+.book-card:hover .book-cover img {
+    transform: scale(1.05) !important;
+}
+
+.btn-details:hover {
+    background: #0056b3 !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* No cover placeholder */
+.no-cover {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #f8f9fa !important;
+    color: #adb5bd !important;
+    padding: 20px !important;
+}
+
+.no-cover i {
+    font-size: 2.5rem !important;
+    margin-bottom: 10px !important;
+}
+
+.no-cover span {
+    font-size: 0.9rem !important;
+    color: #6c757d !important;
+}
+
+/* Responsive grid */
+@media (max-width: 1200px) {
+    .books-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .book-cover {
+        height: 350px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+    .book-cover {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .books-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .book-cover {
+        height: 250px !important;
+    }
+}
+
+/* Пагинация */
+.pagination-container {
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 5px;
+}
+
+.pagination .page-item {
+    margin: 0;
+}
+
+.pagination .page-item .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    height: 35px;
+    padding: 0 12px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    color: #007bff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    color: #6c757d;
+    pointer-events: none;
+}
+
+.pagination .page-item:not(.disabled):not(.active) .page-link:hover {
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+    color: #0056b3;
+}
+
+/* Адаптивность пагинации */
+@media (max-width: 576px) {
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination .page-item .page-link {
+        min-width: 30px;
+        height: 30px;
+        padding: 0 8px;
+        font-size: 0.9em;
+    }
+}
+
+/* Обновляем стили для формы фильтрации */
+.search-filter-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.search-filter-container form {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-box, .category-filter {
+    position: relative;
+    flex: 1;
+}
+
+.search-box input,
+.category-filter select {
+    width: 100%;
+    padding: 10px 15px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-icon,
+.filter-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.filter-submit .btn {
+    padding: 10px 20px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filter-submit .btn:hover {
+    background: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .search-filter-container form {
+        flex-direction: column;
+    }
+    
+    .search-box,
+    .category-filter,
+    .filter-submit {
+        width: 100%;
+    }
+    
+    .filter-submit .btn {
+        width: 100%;
+    }
+}
+
+/* Стили для сообщения о не найденных книгах */
+.no-books-found {
+    text-align: center;
+    padding: 40px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.no-books-found i {
+    font-size: 48px;
+    color: #dee2e6;
+    margin-bottom: 15px;
+}
+
+.no-books-found p {
+    color: #6c757d;
+    font-size: 18px;
+    margin: 0;
+}

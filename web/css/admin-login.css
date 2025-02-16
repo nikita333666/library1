@@ -1,0 +1,116 @@
+.admin-login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+}
+
+.admin-login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.admin-login-title {
+    font-size: 2em;
+    color: #2d3436;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.admin-login-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #764ba2;
+    margin: 10px auto;
+}
+
+.admin-login-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2d3436;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #764ba2;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+}
+
+.admin-login-btn {
+    background: #764ba2;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.admin-login-btn:hover {
+    background: #663c8f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+}
+
+.admin-login-btn:active {
+    transform: translateY(0);
+}
+
+.help-block {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .admin-login-box {
+        padding: 30px 20px;
+    }
+
+    .admin-login-title {
+        font-size: 1.8em;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .admin-login-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}

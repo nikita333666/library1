@@ -1,0 +1,209 @@
+/* Стили для страницы истории */
+.history-page {
+    padding: 40px 0;
+    min-height: calc(100vh - 160px);
+    background-color: #f8f9fa;
+}
+
+.history-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.history-header h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin: 0;
+}
+
+/* Кнопка очистки истории */
+.history-btn-clear {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.history-btn-clear:hover {
+    background-color: #dc3545;
+    color: white;
+    text-decoration: none;
+}
+
+.history-btn-clear i {
+    font-size: 1.1em;
+}
+
+/* Сетка книг */
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* Карточка книги */
+.history-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.history-card-cover {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: #f8f9fa;
+    overflow: hidden;
+}
+
+.history-card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.history-card:hover .history-card-cover img {
+    transform: scale(1.05);
+}
+
+.history-no-cover {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+.history-no-cover i {
+    font-size: 4em;
+    color: #ddd;
+}
+
+.history-card-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-card-title {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+.history-card-author,
+.history-card-date {
+    color: #666;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.history-card-author i,
+.history-card-date i {
+    color: #888;
+}
+
+.history-card-date {
+    font-size: 0.85em;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.history-card-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #00ff9d;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.history-card-btn:hover {
+    background: #00e589;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Пагинация */
+.history-pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.history-pagination .pagination {
+    gap: 5px;
+}
+
+.history-pagination .page-link {
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.history-pagination .page-item.active .page-link {
+    background-color: #00ff9d;
+    color: #333;
+}
+
+.history-pagination .page-link:hover {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Пустая история */
+.history-empty {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.history-empty i {
+    font-size: 1.5em;
+    color: #17a2b8;
+}
